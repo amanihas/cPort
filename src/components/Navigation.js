@@ -48,7 +48,8 @@ const Navigation = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-[9999] bg-[#F8F8F0] backdrop-blur-sm shadow-md transition-all duration-300`}
-      style={{ WebkitBackdropFilter: 'blur(6px)', backdropFilter: 'blur(6px)' }}
+      style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 9999, WebkitBackdropFilter: 'blur(6px)', backdropFilter: 'blur(6px)' }}
+      role="navigation"
     >
       <div className="container-custom">
         <div className="flex items-center justify-between h-16 px-4">

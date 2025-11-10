@@ -9,15 +9,14 @@ const brandGuidelineImages = [
   '/images/Oasis/OasisBrandGuidelines/Typography.png',
 ];
 const oasisImages = [
-  '/images/Oasis/Profile Page- Final.png',
-  '/images/Oasis/Search Page (Posts) - Final.png',
-  '/images/Oasis/Search Page (Itineraries) - Final.png',
-  '/images/Oasis/View Itinerary page - day 1.png',
+  '/images/Oasis/Home Page.png',
+  '/images/Oasis/Search Page (Posts).png',
+  '/images/Oasis/Profile Page.png',
+  "/images/Oasis/DM's Page.png",
   '/images/Oasis/Post Page (Image).png',
-  "/images/Oasis/DM's Page - Maegan.png",
-  '/images/Oasis/Notification Page Private Acc - Shealyn.png',
+  '/images/Oasis/View Itinerary page - day 1.png',
+  '/images/Oasis/Search Page (Itineraries) - Final.png',
   '/images/Oasis/Settings Page - Account.png',
-  '/images/Oasis/Settings Page - Travel.png',
 ];
 
 const OasisCaseStudy = () => {
@@ -37,14 +36,14 @@ const OasisCaseStudy = () => {
           ← Back
         </button>
 
-        <p className="text-neutral-700 mb-6 max-w-3xl">
-          {/* Landing image immediately under the header */}
-          <div className="mb-6">
-            <img src="/images/Oasis/LandingPage.png" alt="Oasis Landing" className="w-full h-auto rounded" loading="lazy" />
-          </div>
-          Oasis is a platform that brings authenticity to social media and uses AI as a tool to create more intentional experiences. At its core,
-          Oasis reimagines how we connect, share, and explore during travel.
-        </p>
+            {/* Landing image immediately under the header */}
+            <div className="mb-6">
+              <img src="/images/Oasis/LandingPage.png" alt="Oasis Landing" className="w-full h-auto rounded" loading="lazy" />
+            </div>
+            <p className="text-neutral-700 mb-6 max-w-3xl">
+              Oasis is a platform that brings authenticity to social media and uses AI as a tool to create more intentional experiences. At its core,
+              Oasis reimagines how we connect, share, and explore during travel.
+            </p>
 
         <div className="grid md:grid-cols-2 gap-8 mb-8">
           <div>
@@ -79,60 +78,25 @@ const OasisCaseStudy = () => {
           ))}
         </div>
 
-        {/* Gallery Section */}
+        {/* Figma Designs: login stack left, other screens right */}
         <h3 className="heading-3 mb-4">Figma Designs</h3>
-        {/* Custom layout: Landing left, LoginHome/Login/SignUp stacked right */}
-        <div className="grid md:grid-cols-2 gap-8 mb-8">
-          {/* Left: Landing Page.png */}
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
+          {/* Left: Landing (full) */}
           <div>
-            <img
-              src="/images/Oasis/Landing Page.png"
-              alt="Oasis Landing Page"
-              className="w-full h-auto"
-              loading="lazy"
-            />
+            <img src="/images/Oasis/Landing Page Full.png" alt="Landing Page Full" className="w-full h-auto" loading="lazy" />
           </div>
-          {/* Right: LoginHome, Login, SignUp stacked */}
-          <div className="flex flex-col gap-8 h-full justify-between">
-            <img
-              src="/images/Oasis/LoginHome.png"
-              alt="Oasis Login Home"
-              className="w-full h-auto"
-              loading="lazy"
-            />
-            <img
-              src="/images/Oasis/Login.png"
-              alt="Oasis Login"
-              className="w-full h-auto"
-              loading="lazy"
-            />
-            <img
-              src="/images/Oasis/SignUp.png"
-              alt="Oasis Sign Up"
-              className="w-full h-auto"
-              loading="lazy"
-            />
+
+          {/* Right: stacked login screens */}
+          <div className="flex flex-col gap-8">
+            <img src="/images/Oasis/LoginHome.png" alt="Login Home" className="w-full h-auto" loading="lazy" />
+            <img src="/images/Oasis/Login.png" alt="Login" className="w-full h-auto" loading="lazy" />
+            <img src="/images/Oasis/Signup.png" alt="Sign Up" className="w-full h-auto" loading="lazy" />
           </div>
         </div>
-        {/* Remaining images */}
+        {/* Remaining screens gallery (below the landing + login stack) */}
         <div className="grid md:grid-cols-2 gap-8 mb-12">
-          {[
-            '/images/Oasis/Home Page.png',
-            '/images/Oasis/Search Page (Posts).png',
-            '/images/Oasis/View Itinerary page - day 1.png',
-            '/images/Oasis/Post Page (Image).png',
-            '/images/Oasis/Profile Page.png',
-            "/images/Oasis/DM's Page.png",
-            '/images/Oasis/Notification Page Private Acc.png',
-            '/images/Oasis/Settings Page - Account.png',
-          ].map((src, i) => (
-            <img
-              key={src}
-              src={src}
-              alt="Oasis screenshot"
-              className="w-full h-auto"
-              loading="lazy"
-            />
+          {oasisImages.map((src) => (
+            <img key={src} src={src} alt="Oasis screenshot" className="w-full h-auto" loading="lazy" />
           ))}
         </div>
       </div>

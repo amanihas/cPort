@@ -20,7 +20,7 @@ const Projects = () => {
         <img
           src="/images/Oasis/LandingPage.png"
           alt="Oasis landing preview"
-          className="w-full object-cover h-[28rem] sm:h-[32rem] rounded"
+          className="w-full h-auto object-top rounded-t-lg"
         />
       ),
     },
@@ -42,7 +42,7 @@ const Projects = () => {
         <img
           src="/images/Litterly/LitterlyCoverPhoto.png"
           alt="Litterly cover"
-          className="w-full object-contain max-h-[28rem] rounded"
+          className="w-full h-auto object-top rounded-t-lg"
         />
       ),
     },
@@ -111,33 +111,40 @@ const Projects = () => {
 
           <div className="space-y-20 max-w-4xl mx-auto">
             {projects.map((project) => (
-              <div key={project.id} className="group pb-12 border-b border-black/5 last:border-b-0">
-                <div className="max-w-3xl mx-auto pt-6">
+              <a
+                key={project.id}
+                href={project.caseStudy !== '#' ? project.caseStudy : '#'}
+                onClick={(e) => {
+                  if (project.caseStudy === '#') {
+                    e.preventDefault();
+                    console.log(`Navigate to project: ${project.name}`);
+                    return;
+                  }
+                  // allow normal anchor navigation for hash-based routing
+                }}
+                className="group block pb-12 border-b border-black/5 last:border-b-0 no-underline"
+                role="link"
+                aria-label={`Open case study for ${project.name}`}
+              >
+                <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-sm hover:shadow-md transition-transform duration-200 transform hover:-translate-y-1 overflow-hidden">
                   {/* Preview Image */}
-                  <div className="mb-6 bg-[#F8F8F0] w-full flex items-center justify-center rounded transition-all duration-300 overflow-hidden">
+                  <div className="mb-3 w-full overflow-hidden rounded-t-lg">
                     {project.thumbnail}
                   </div>
 
                   {/* Project Info */}
-                  <div className="space-y-3">
+                  <div className="space-y-2 p-4">
                     <span className="text-xs font-semibold text-neutral-600 uppercase tracking-wide">
                       {project.type}
                     </span>
 
-                    <a
-                      href={project.caseStudy !== '#' ? project.caseStudy : '#'}
-                      onClick={(e) => {
-                        if (project.caseStudy === '#') {
-                          e.preventDefault();
-                          console.log(`Navigate to project: ${project.name}`);
-                        }
-                      }}
-                      className="block"
-                    >
-                      <h2 className="text-3xl font-bold text-black group-hover:text-neutral-700 transition-colors cursor-pointer">
-                        {project.name}
-                      </h2>
-                    </a>
+                    <h2 className="text-3xl font-bold text-black group-hover:text-neutral-700 transition-colors cursor-pointer flex items-center gap-3">
+                      {project.name}
+                      {/* subtle link indicator */}
+                      <svg className="w-5 h-5 text-neutral-500 group-hover:text-neutral-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                      </svg>
+                    </h2>
 
                     <p className="text-base text-neutral-700 leading-relaxed">
                       {project.description}
@@ -155,7 +162,7 @@ const Projects = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>
