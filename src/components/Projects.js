@@ -4,6 +4,28 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
+      name: 'Oasis',
+      type: 'Product Design / Frontend',
+      description:
+        'Oasis is a platform that brings authenticity to social media and uses AI as a tool, to create more intentional experiences with travel.',
+      problem:
+        'Social media often amplifies performative content; Oasis reimagines sharing to be more intentional and discovery-focused.',
+      solution:
+        'Designed interfaces that foreground authentic travel experiences and used lightweight AI features to surface meaningful content. I worked on the front-end implementation and interactions.',
+      tools: ['React', 'Figma'],
+      github: '#',
+      demo: '#',
+      caseStudy: '#/oasis',
+      thumbnail: (
+        <img
+          src="/images/Oasis/LandingPage.png"
+          alt="Oasis landing preview"
+          className="w-full object-cover h-[28rem] sm:h-[32rem] rounded"
+        />
+      ),
+    },
+    {
+      id: 2,
       name: 'Litterly',
       type: 'Hackathon Project',
       description:
@@ -14,12 +36,50 @@ const Projects = () => {
         'Created a mobile app that gamifies litter collection through AI-powered verification and reward systems.',
       tools: ['React', 'AI/ML', 'Mobile Development', 'Image Recognition'],
       github: '#',
-      demo: '#',
-      caseStudy: '#',
-      thumbnail: '🗑️',
+      demo: 'https://devpost.com/software/litterly',
+      caseStudy: '#/litterly',
+      thumbnail: (
+        <img
+          src="/images/Litterly/LitterlyCoverPhoto.png"
+          alt="Litterly cover"
+          className="w-full object-contain max-h-[28rem] rounded"
+        />
+      ),
     },
     {
-      id: 2,
+      id: 3,
+      name: 'Girls Who Budget',
+      type: 'Personal Finance App',
+      description:
+        'A React web application for personal finance tracking and category-based budgeting. Empowers users to take control of their finances with intuitive categorization and visualization.',
+      problem:
+        'Need for an accessible, user-friendly personal finance tracking tool.',
+      solution:
+        'Created an intuitive budgeting app with category-based tracking and visual analytics.',
+      tools: ['React', 'JavaScript', 'SQL', 'PHP', 'Data Visualization'],
+      github: '#',
+      demo: '#',
+      caseStudy: '#',
+      thumbnail: '💰',
+    },
+    {
+      id: 4,
+      name: 'DrawSpace',
+      type: 'Collaborative Web App',
+      description:
+        'A collaborative web-based art and brainstorming tool that enables multiple users to create and share visual content in real-time. Perfect for remote teams and creative sessions.',
+      problem:
+        'Lack of accessible tools for real-time collaborative visual brainstorming.',
+      solution:
+        'Developed a web-based collaborative drawing tool with real-time synchronization.',
+      tools: ['React', 'Canvas API', 'Real-time Collaboration'],
+      github: '#',
+      demo: '#',
+      caseStudy: '#',
+      thumbnail: '🎨',
+    },
+    {
+      id: 5,
       name: 'Knights Wildlife Tracker',
       type: 'Full-Stack Application',
       description:
@@ -34,44 +94,11 @@ const Projects = () => {
         'Express.js',
         'MongoDB',
         'Google Maps API',
-        'RESTful APIs',
       ],
       github: '#',
       demo: '#',
       caseStudy: '#',
       thumbnail: '🦌',
-    },
-    {
-      id: 3,
-      name: 'DrawSpace',
-      type: 'Collaborative Web App',
-      description:
-        'A collaborative web-based art and brainstorming tool that enables multiple users to create and share visual content in real-time. Perfect for remote teams and creative sessions.',
-      problem:
-        'Lack of accessible tools for real-time collaborative visual brainstorming.',
-      solution:
-        'Developed a web-based collaborative drawing tool with real-time synchronization.',
-      tools: ['React', 'WebSockets', 'Canvas API', 'Real-time Collaboration'],
-      github: '#',
-      demo: '#',
-      caseStudy: '#',
-      thumbnail: '🎨',
-    },
-    {
-      id: 4,
-      name: 'Girls Who Budget',
-      type: 'Personal Finance App',
-      description:
-        'A React web application for personal finance tracking and category-based budgeting. Empowers users to take control of their finances with intuitive categorization and visualization.',
-      problem:
-        'Need for an accessible, user-friendly personal finance tracking tool.',
-      solution:
-        'Created an intuitive budgeting app with category-based tracking and visual analytics.',
-      tools: ['React', 'JavaScript', 'Local Storage', 'Data Visualization'],
-      github: '#',
-      demo: '#',
-      caseStudy: '#',
-      thumbnail: '💰',
     },
   ];
 
@@ -80,68 +107,58 @@ const Projects = () => {
       <div className="section-separator"></div>
       <section id="projects" className="section-padding bg-[#F8F8F0]">
         <div className="container-custom w-full">
-          <h2 className="heading-2 text-center mb-12">Projects</h2>
+          <h2 className="heading-2 text-left mb-12">Projects</h2>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((project) => (
-            <a
-              key={project.id}
-              href={project.caseStudy !== '#' ? project.caseStudy : '#'}
-              className="card group block cursor-pointer hover:border-black hover:shadow-xl 
-                       transition-all duration-300 transform hover:-translate-y-1"
-              onClick={(e) => {
-                if (project.caseStudy === '#') {
-                  e.preventDefault();
-                  // You can add routing logic here later
-                  console.log(`Navigate to project: ${project.name}`);
-                }
-              }}
-            >
-              {/* Project Thumbnail */}
-              <div className="mb-6 h-40 border border-black/10 bg-[#F8F8F0] flex items-center justify-center text-5xl 
-                           group-hover:border-black group-hover:bg-black/5 transition-all duration-300">
-                {project.thumbnail}
-              </div>
+          <div className="space-y-20 max-w-4xl mx-auto">
+            {projects.map((project) => (
+              <div key={project.id} className="group pb-12 border-b border-black/5 last:border-b-0">
+                <div className="max-w-3xl mx-auto pt-6">
+                  {/* Preview Image */}
+                  <div className="mb-6 bg-[#F8F8F0] w-full flex items-center justify-center rounded transition-all duration-300 overflow-hidden">
+                    {project.thumbnail}
+                  </div>
 
-              {/* Project Info */}
-              <div className="space-y-4">
-                <div>
-                  <span className="text-xs font-semibold text-black uppercase tracking-wide">
-                    {project.type}
-                  </span>
-                  <h3 className="heading-3 mt-2 group-hover:text-black transition-colors">
-                    {project.name}
-                  </h3>
-                </div>
+                  {/* Project Info */}
+                  <div className="space-y-3">
+                    <span className="text-xs font-semibold text-neutral-600 uppercase tracking-wide">
+                      {project.type}
+                    </span>
 
-                <p className="text-sm text-neutral-700 leading-relaxed">
-                  {project.description}
-                </p>
+                    <a
+                      href={project.caseStudy !== '#' ? project.caseStudy : '#'}
+                      onClick={(e) => {
+                        if (project.caseStudy === '#') {
+                          e.preventDefault();
+                          console.log(`Navigate to project: ${project.name}`);
+                        }
+                      }}
+                      className="block"
+                    >
+                      <h2 className="text-3xl font-bold text-black group-hover:text-neutral-700 transition-colors cursor-pointer">
+                        {project.name}
+                      </h2>
+                    </a>
 
-                {/* Tools Used */}
-                <div>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tools.map((tool, index) => (
-                      <span
-                        key={index}
-                        className="px-3 py-1 bg-[#F8F8F0] border border-black/20 text-neutral-900 rounded-sm text-xs font-medium
-                                 group-hover:border-black/40 transition-colors"
-                      >
-                        {tool}
-                      </span>
-                    ))}
+                    <p className="text-base text-neutral-700 leading-relaxed">
+                      {project.description}
+                    </p>
+
+                    <div className="pt-2 flex flex-wrap gap-3">
+                      {project.tools.map((tool, index) => (
+                        <span
+                          key={index}
+                          className="px-3 py-1 border border-black/20 bg-white text-neutral-900 text-sm rounded-lg"
+                        >
+                          {tool}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
-
-                {/* View Project Link */}
-                <div className="pt-2 flex items-center text-sm font-medium text-black group-hover:underline">
-                  View Project →
-                </div>
               </div>
-            </a>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
       </section>
     </>
   );

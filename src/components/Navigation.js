@@ -17,6 +17,20 @@ const Navigation = () => {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
       setIsMobileMenuOpen(false);
+      return;
+    }
+
+    // If the section isn't on the current page (e.g., we're on a case study),
+    // navigate back to the main page (clear hash) and scroll after the DOM updates.
+    setIsMobileMenuOpen(false);
+    if (window.location.hash && window.location.hash !== '') {
+      // Clear the hash to render the home sections
+      window.location.hash = '';
+      // Wait briefly for the home content to render, then scroll.
+      setTimeout(() => {
+        const el = document.getElementById(sectionId);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 250);
     }
   };
 
@@ -33,11 +47,8 @@ const Navigation = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-[#F8F8F0]/95 backdrop-blur-sm shadow-md'
-          : 'bg-[#F8F8F0]'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-[9999] bg-[#F8F8F0] backdrop-blur-sm shadow-md transition-all duration-300`}
+      style={{ WebkitBackdropFilter: 'blur(6px)', backdropFilter: 'blur(6px)' }}
     >
       <div className="container-custom">
         <div className="flex items-center justify-between h-16 px-4">
