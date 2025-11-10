@@ -1,34 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
-
-  const [status, setStatus] = useState('');
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // This would typically send the form data to a backend
-    // For now, it's a placeholder
-    setStatus('Thank you for your message! I\'ll get back to you soon.');
-    setFormData({ name: '', email: '', message: '' });
-    setTimeout(() => setStatus(''), 5000);
-  };
 
   const socialLinks = [
     {
       name: 'LinkedIn',
-      url: 'https://linkedin.com/in/amani-hassan',
+      url: 'https://linkedin.com/in/amanihas',
       icon: (
         <svg
           className="w-6 h-6"
@@ -41,7 +18,7 @@ const Contact = () => {
     },
     {
       name: 'GitHub',
-      url: 'https://github.com/amani-hassan',
+      url: 'https://github.com/amanihas',
       icon: (
         <svg
           className="w-6 h-6"
@@ -57,7 +34,6 @@ const Contact = () => {
       ),
     },
   ];
-
   return (
     <>
       <div className="section-separator"></div>
@@ -65,94 +41,10 @@ const Contact = () => {
         <div className="container-custom w-full">
           <h2 className="heading-2 text-center mb-12">Contact</h2>
 
-        <div className="max-w-2xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Contact Form */}
-            <div>
-              <h3 className="heading-3 mb-4">Send a Message</h3>
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-xs font-medium text-neutral-700 mb-1.5"
-                  >
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-3 py-2 text-sm border border-black/20 rounded-sm bg-[#F8F8F0]
-                             focus:outline-none focus:ring-2 focus:ring-black 
-                             focus:border-black transition-all"
-                    aria-required="true"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-xs font-medium text-neutral-700 mb-1.5"
-                  >
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-3 py-2 text-sm border border-black/20 rounded-sm bg-[#F8F8F0]
-                             focus:outline-none focus:ring-2 focus:ring-black 
-                             focus:border-black transition-all"
-                    aria-required="true"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="message"
-                    className="block text-xs font-medium text-neutral-700 mb-1.5"
-                  >
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows="6"
-                    className="w-full px-3 py-2 text-sm border border-black/20 rounded-sm bg-[#F8F8F0]
-                             focus:outline-none focus:ring-2 focus:ring-black 
-                             focus:border-black transition-all resize-none"
-                    aria-required="true"
-                  ></textarea>
-                </div>
-
-                {status && (
-                  <div
-                    className="p-4 bg-[#F8F8F0] border border-black/20 text-neutral-900"
-                    role="status"
-                  >
-                    {status}
-                  </div>
-                )}
-
-                <button type="submit" className="btn-primary w-full">
-                  Send Message
-                </button>
-              </form>
-            </div>
-
-            {/* Contact Info & Social Links */}
-            <div>
+          <div className="max-w-2xl mx-auto">
+            <div className="bg-[#F8F8F0] p-6 border border-black/10 rounded">
               <h3 className="heading-3 mb-4">Connect</h3>
-              
+
               <div className="space-y-6">
                 {/* Email */}
                 <div>
@@ -160,12 +52,12 @@ const Contact = () => {
                     Email
                   </h4>
                   <a
-                    href="mailto:amani@example.com"
+                    href="mailto:amanihas2021@gmail.com"
                     className="text-sm text-black hover:text-neutral-700 font-medium 
                              transition-colors focus:outline-none focus:ring-2 
                              focus:ring-neutral-500 rounded"
                   >
-                    amani@example.com
+                    amanihas2021@gmail.com
                   </a>
                 </div>
 
@@ -205,12 +97,10 @@ const Contact = () => {
                     ))}
                   </div>
                 </div>
-
               </div>
             </div>
           </div>
         </div>
-      </div>
       </section>
     </>
   );

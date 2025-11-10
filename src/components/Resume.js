@@ -2,9 +2,10 @@ import React from 'react';
 
 const Resume = () => {
   const handleDownload = () => {
-    // This would typically link to an actual PDF file
-    // For now, it's a placeholder
-    alert('Resume download functionality - replace with actual PDF link');
+    // Open the resume PDF placed in the public folder in a new tab
+    // The public folder is served at the site root, so use '/AmaniHassan-Resume.pdf'
+    const fileUrl = '/AmaniHassan-Resume.pdf';
+    window.open(fileUrl, '_blank');
   };
 
   const highlights = [

@@ -27,7 +27,8 @@ const Navigation = () => {
 
   const handleResumeClick = () => {
     // Open resume PDF in a new tab
-    window.open('/resume.pdf', '_blank');
+    // public/AmaniHassan-Resume.pdf is served from the site root when built/served.
+    window.open('/AmaniHassan-Resume.pdf', '_blank');
   };
 
   return (
