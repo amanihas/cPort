@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply text-neutral-900;
+    background-color: #F8F8F0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Charter', Georgia, 'Times New Roman', serif;
+    font-weight: 700;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply min-h-screen pt-20 sm:pt-24 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8 flex flex-col justify-center;
+  }
+  
+  .section-separator {
+    @apply w-full h-px bg-black;
+  }
+  
+  .container-custom {
+    @apply max-w-4xl mx-auto;
+  }
+  
+  .btn-primary {
+    @apply bg-black text-white px-6 py-3 rounded-sm font-medium 
+           hover:bg-neutral-800 transition-colors duration-200 
+           focus:outline-none focus:ring-2 focus:ring-neutral-500 focus:ring-offset-2;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent text-neutral-900 px-6 py-3 rounded-sm font-medium 
+           border border-black hover:bg-black hover:text-white transition-colors duration-200 
+           focus:outline-none focus:ring-2 focus:ring-neutral-500 focus:ring-offset-2;
+  }
+  
+  .card {
+    @apply bg-[#F8F8F0] border border-black/20 p-6;
+  }
+  
+  .heading-1 {
+    @apply text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900;
+    font-family: 'Charter', Georgia, 'Times New Roman', serif;
+  }
+  
+  .heading-2 {
+    @apply text-2xl sm:text-3xl lg:text-4xl font-bold text-neutral-900;
+    font-family: 'Charter', Georgia, 'Times New Roman', serif;
+  }
+  
+  .heading-3 {
+    @apply text-xl sm:text-2xl font-semibold text-neutral-800;
+    font-family: 'Charter', Georgia, 'Times New Roman', serif;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 1s ease-in;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
