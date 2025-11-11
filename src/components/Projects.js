@@ -59,7 +59,7 @@ const Projects = () => {
       tools: ['React', 'JavaScript', 'SQL', 'PHP', 'Data Visualization'],
       github: '#',
       demo: '#',
-      caseStudy: '#',
+      caseStudy: 'https://github.com/amanihas/GWB',
       thumbnail: (
         <img
           src="/images/GWB/GWB.png"
@@ -81,7 +81,7 @@ const Projects = () => {
       tools: ['React', 'Canvas API', 'Real-time Collaboration'],
       github: '#',
       demo: '#',
-      caseStudy: '#',
+      caseStudy: 'https://github.com/amanihas/DrawSpace',
       thumbnail: (
         <img
           src="/images/DrawSpace/DrawSpace.png"
@@ -104,6 +104,16 @@ const Projects = () => {
               <a
                 key={project.id}
                 href={project.caseStudy !== '#' ? project.caseStudy : '#'}
+                target={
+                  ['DrawSpace', 'Girls Who Budget'].includes(project.name)
+                    ? '_blank'
+                    : '_self'
+                } // 👈 open these two in new tab
+                rel={
+                  ['DrawSpace', 'Girls Who Budget'].includes(project.name)
+                    ? 'noopener noreferrer'
+                    : undefined
+                }
                 onClick={(e) => {
                   if (project.caseStudy === '#') {
                     e.preventDefault();

@@ -1,6 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const LitterlyCaseStudy = () => {
+useEffect(() => {
+    // When this component mounts, ensure we're at the top of the case study
+    // so clicking a project reliably lands at the top.
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+  }, []);
+
   const tools = ['React', 'TensorFlow.js', 'Mobile UI', 'Accessibility'];
 
   const personas = [
