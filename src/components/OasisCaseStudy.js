@@ -48,7 +48,7 @@ const OasisCaseStudy = () => {
         <div className="grid md:grid-cols-2 gap-8 mb-8">
           <div>
             <h3 className="heading-3 mb-2">My Role</h3>
-            <p className="text-neutral-700 mb-4">Front-end developer — built UI components, responsive layouts, and interactive states.</p>
+            <p className="text-neutral-700 mb-4">Front-end developer &amp; UX designer — crafted accessible user flows and implemented reusable UI components, responsive layouts, and interactive states.</p>
           </div>
 
           <div>
@@ -56,7 +56,6 @@ const OasisCaseStudy = () => {
             <div className="flex flex-wrap gap-2 mb-4">
               <span className="px-3 py-1 bg-[#F8F8F0] border border-black/20 text-neutral-900 rounded-sm text-xs">React</span>
               <span className="px-3 py-1 bg-[#F8F8F0] border border-black/20 text-neutral-900 rounded-sm text-xs">Figma</span>
-              <span className="px-3 py-1 bg-[#F8F8F0] border border-black/20 text-neutral-900 rounded-sm text-xs">AI</span>
             </div>
           </div>
         </div>
@@ -80,6 +79,9 @@ const OasisCaseStudy = () => {
 
         {/* Figma Designs: login stack left, other screens right */}
         <h3 className="heading-3 mb-4">Figma Designs</h3>
+        <p className="text-neutral-700 mb-6 max-w-3xl">
+          Screens exported from Figma that showcase the landing and authentication flows, along with key in-app screens used to validate layout, spacing, and interactions.
+        </p>
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           {/* Left: Landing (full) */}
           <div>
@@ -98,6 +100,18 @@ const OasisCaseStudy = () => {
           {oasisImages.map((src) => (
             <img key={src} src={src} alt="Oasis screenshot" className="w-full h-auto" loading="lazy" />
           ))}
+        </div>
+
+        {/* GitHub link */}
+        <div className="mt-6 mb-6">
+          <a
+            href="https://github.com/Oasis-Summer/Oasis-Summer"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block text-sm text-neutral-900 border border-black/10 px-3 py-2 rounded hover:bg-black/5"
+          >
+            View GitHub repository
+          </a>
         </div>
       </div>
     </section>

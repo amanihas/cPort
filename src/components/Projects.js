@@ -12,7 +12,7 @@ const Projects = () => {
         'Social media often amplifies performative content; Oasis reimagines sharing to be more intentional and discovery-focused.',
       solution:
         'Designed interfaces that foreground authentic travel experiences and used lightweight AI features to surface meaningful content. I worked on the front-end implementation and interactions.',
-      tools: ['React', 'Figma'],
+      tools: ['React', 'Figma', 'UX/UI', 'AI'],
       github: '#',
       demo: '#',
       caseStudy: '#/oasis',
@@ -60,7 +60,13 @@ const Projects = () => {
       github: '#',
       demo: '#',
       caseStudy: '#',
-      thumbnail: '💰',
+      thumbnail: (
+        <img
+          src="/images/GWB/GWB.png"
+          alt="GWB landing preview"
+          className="w-full h-auto object-top rounded-t-lg"
+        />
+      ),
     },
     {
       id: 4,
@@ -76,29 +82,13 @@ const Projects = () => {
       github: '#',
       demo: '#',
       caseStudy: '#',
-      thumbnail: '🎨',
-    },
-    {
-      id: 5,
-      name: 'Knights Wildlife Tracker',
-      type: 'Full-Stack Application',
-      description:
-        'A React + Node.js platform for logging and mapping wildlife sightings. Enables users to track, visualize, and share wildlife observations with an interactive map interface.',
-      problem:
-        'Need for a centralized platform to log and visualize wildlife sightings.',
-      solution:
-        'Built a full-stack application with real-time mapping capabilities using Google Maps API.',
-      tools: [
-        'React',
-        'Node.js',
-        'Express.js',
-        'MongoDB',
-        'Google Maps API',
-      ],
-      github: '#',
-      demo: '#',
-      caseStudy: '#',
-      thumbnail: '🦌',
+      thumbnail: (
+        <img
+          src="/images/DrawSpace/DrawSpace.png"
+          alt="DrawSpace landing preview"
+          className="w-full h-auto object-top rounded-t-lg"
+        />
+      ),
     },
   ];
 
@@ -109,7 +99,7 @@ const Projects = () => {
         <div className="container-custom w-full">
           <h2 className="heading-2 text-left mb-12">Projects</h2>
 
-          <div className="space-y-20 max-w-4xl mx-auto">
+          <div className="space-y-8 max-w-4xl mx-auto">
             {projects.map((project) => (
               <a
                 key={project.id}
@@ -122,39 +112,39 @@ const Projects = () => {
                   }
                   // allow normal anchor navigation for hash-based routing
                 }}
-                className="group block pb-12 border-b border-black/5 last:border-b-0 no-underline"
+                className="group block pb-8 border-b border-black/5 last:border-b-0 no-underline"
                 role="link"
                 aria-label={`Open case study for ${project.name}`}
               >
-                <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-sm hover:shadow-md transition-transform duration-200 transform hover:-translate-y-1 overflow-hidden">
+                <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-sm hover:shadow-md transition-transform duration-200 transform hover:-translate-y-1 overflow-hidden">
                   {/* Preview Image */}
-                  <div className="mb-3 w-full overflow-hidden rounded-t-lg">
+                  <div className="mb-1 w-full overflow-hidden rounded-t-lg">
                     {project.thumbnail}
                   </div>
 
                   {/* Project Info */}
-                  <div className="space-y-2 p-4">
+                  <div className="space-y-1 p-2">
                     <span className="text-xs font-semibold text-neutral-600 uppercase tracking-wide">
                       {project.type}
                     </span>
 
-                    <h2 className="text-3xl font-bold text-black group-hover:text-neutral-700 transition-colors cursor-pointer flex items-center gap-3">
+                    <h2 className="text-lg font-medium text-black group-hover:text-neutral-700 transition-colors cursor-pointer flex items-center gap-2">
                       {project.name}
                       {/* subtle link indicator */}
-                      <svg className="w-5 h-5 text-neutral-500 group-hover:text-neutral-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                      <svg className="w-4 h-4 text-neutral-500 group-hover:text-neutral-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                       </svg>
                     </h2>
 
-                    <p className="text-base text-neutral-700 leading-relaxed">
+                    <p className="text-sm text-neutral-700 leading-relaxed">
                       {project.description}
                     </p>
 
-                    <div className="pt-2 flex flex-wrap gap-3">
+                    <div className="pt-1 flex flex-wrap gap-2">
                       {project.tools.map((tool, index) => (
                         <span
                           key={index}
-                          className="px-3 py-1 border border-black/20 bg-white text-neutral-900 text-sm rounded-lg"
+                          className="px-2 py-0.5 border border-black/20 bg-white text-neutral-900 text-xs rounded-md"
                         >
                           {tool}
                         </span>
